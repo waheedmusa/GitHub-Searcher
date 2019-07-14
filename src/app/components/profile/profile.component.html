@@ -1,0 +1,57 @@
+<form action="" class="search-form">
+        <hr>
+        <h3 style="font-family: 'Poppins', sans-serif; text-align: center">Search Github</h3>
+        <hr>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Search username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+        </div>
+    </form>
+<div *ngIf="profile">
+    <div class="container-fluid">
+    <div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{profile.login}}
+            <span *ngIf="profile.company">, {{profile.login}} , works at {{profile.company}}</span>
+        </div>
+        <hr>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+                </div>
+                <div class="col-5">
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+                        <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
+                        <li class="list-group-item" *ngIf="profile.blog"> <a href="{{profile.blog}}" target="_blank"> {{profile.blog}} </a></li>
+                        <li class="list-group-item" *ngIf="profile.email"> <a href="emailto:{{profile.email}}"> {{profile.email}} </a></li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <p>
+                            <span class="badge badge-secondary">{{profile.followers}} Followers</span>
+                            <span class="badge badge-primary">Following {{profile.following}}</span>
+                            <span class="badge badge-info">{{profile.public_gists}} Public Gists</span>
+                            <span class="badge badge-success">{{profile.public_repos}} Public Repositories</span>
+                        </p>
+                        <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-small">View profile on GitHub</a></p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Repositories</h3>
+                            <div class="card-text" *ngFor="let repo of repos">
+                                <p class="clearfix">
+                                    {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-success pull-right">View this project on GitHub</a>
+                                </p>
+                                <p>{{repo.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
