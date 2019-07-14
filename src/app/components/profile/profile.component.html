@@ -2,11 +2,9 @@
         <div class="col-md-12">
 <form class="search-form">
         <nav class="navbar navbar-default">
-                <div class="container">
                   <div class="navbar-header">
                     <a class="navbar-brand" href="#">Github User Search</a>
                   </div>
-                </div>
               </nav>
         <div class="form-group">
             <input class="form-control" type="text" placeholder="Search username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
@@ -15,12 +13,9 @@
         </div>    
 </div>
 <div *ngIf="profile">
-    <div class="container-fluid">
-    <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{profile.login}}
-            <span *ngIf="profile.company">, {{profile.login}} , works at {{profile.company}}</span>
+           <h3>{{profile.name}}</h3>
         </div>
         <hr>
         <div class="panel-body">
@@ -61,5 +56,3 @@
         </div>
     </div>
     </div>
-    </div>
-</div>
