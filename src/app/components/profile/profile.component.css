@@ -1,12 +1,13 @@
-.navbar-brand{
+.head1{
     font-family: 'Poppins', sans-serif; 
-    margin-left: 55%;
     color: black;
     font-size: 50px;
+    padding-left: 300px;
 }
 .panel-title{
     font-family: 'Poppins', sans-serif; 
 }
-.panel1{
+.page{
     background-color: white;
+    padding: 5%;
 }

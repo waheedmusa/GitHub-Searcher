@@ -3,7 +3,7 @@
 <form class="search-form">
         <nav class="navbar navbar-default">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Github User Search</a>
+                    <h3 class="head1">Github User Search</h3>
                   </div>
               </nav>
         <div class="form-group">
@@ -12,23 +12,23 @@
     </form>
         </div>    
 </div>
-<div *ngIf="profile">
+<div *ngIf="profile" class="page">
     <div class="panel panel-default">
         <div class="panel-heading">
            <h3 class="panel-title">{{profile.name}}</h3>
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <img src="{{profile.avatar_url}}" alt="Profile Image">
                     <a class="btn btn-default btn-block" target="_blank" href="{{profile.html_url}}">View Profile</a>
                 </div>
-                <div class="col-7">
+                <div class="col-md-8">
                         <div class="stats">
-                                <span class="badge badge-secondary">{{profile.public_repos}} Public Repos</span>
-                                <span class="badge badge-primary">{{profile.public_gists}} Public Gists</span>
-                                <span class="badge badge-success">{{profile.followers}} Followers</span>
-                                <span class="badge badge-info">{{profile.following}} Following</span>
+                                <span class="label label-default">{{profile.public_repos}} Public Repos</span>
+                                <span class="label label-primary">{{profile.public_gists}} Public Gists</span>
+                                <span class="label label-success">{{profile.followers}} Followers</span>
+                                <span class="label label-info">{{profile.following}} Following</span>
                             </div>
                             <br>
                             <ul class="list-group">
@@ -59,4 +59,6 @@
                     </div>
                 </div>
             </div>
+        </div>
+        
        
