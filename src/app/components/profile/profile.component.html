@@ -15,35 +15,41 @@
 <div *ngIf="profile">
     <div class="panel panel-default">
         <div class="panel-heading">
-           <h3>{{profile.name}}</h3>
+           <h3 class="panel-title">{{profile.name}}</h3>
         </div>
-        <hr>
         <div class="panel-body">
             <div class="row">
-                <div class="col-2">
-                    <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+                <div class="col-md-5">
+                    <img src="{{profile.avatar_url}}" alt="Profile Image">
+                    <a class="btn btn-default btn-block" target="_blank" href="{{profile.html_url}}">View Profile</a>
                 </div>
-                <div class="col-5">
-                    <ul class="list-group">
-                        <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
-                        <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
-                        <li class="list-group-item" *ngIf="profile.blog"> <a href="{{profile.blog}}" target="_blank"> {{profile.blog}} </a></li>
-                        <li class="list-group-item" *ngIf="profile.email"> <a href="emailto:{{profile.email}}"> {{profile.email}} </a></li>
-                    </ul>
+                <div class="col-7">
+                        <div class="stats">
+                                <span class="badge badge-secondary">{{profile.public_repos}} Public Repos</span>
+                                <span class="badge badge-primary">{{profile.public_gists}} Public Gists</span>
+                                <span class="badge badge-success">{{profile.followers}} Followers</span>
+                                <span class="badge badge-info">{{profile.following}} Following</span>
+                            </div>
+                            <br>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Username: </strong>{{profile.login}}</li>
+                                <li class="list-group-item"><strong>Location: </strong>{{profile.location}}</li> 
+                                <li class="list-group-item"><strong>Email: </strong>{{profile.email}}</li> 
+                                <li class="list-group-item"><strong>Blog: </strong>{{profile.blog}}</li> 
+                                <li class="list-group-item"><strong>Member Since: </strong>{{profile.created_at}}</li> 
+                            </ul>
+                        </div>    
+                    </div>
                 </div>
-                <div class="col-5">
-                    <div>
-                        <p>
-                            <span class="badge badge-secondary">{{profile.followers}} Followers</span>
-                            <span class="badge badge-primary">Following {{profile.following}}</span>
-                            <span class="badge badge-info">{{profile.public_gists}} Public Gists</span>
-                            <span class="badge badge-success">{{profile.public_repos}} Public Repositories</span>
-                        </p>
-                        <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-small">View profile on GitHub</a></p>
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title">Repositories</h3>
-                            <div class="card-text" *ngFor="let repo of repos">
+            </div>
+            <div class="panel panel-default panel1">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">User Repositories</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div *ngFor="let repo of repos">
+                              <div class="row">
+                                <div class="col-md-9">
                                 <p class="clearfix">
                                     {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-success pull">View this project on GitHub</a>
                                 </p>
@@ -53,6 +59,4 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
+       

@@ -4,3 +4,9 @@
     color: black;
     font-size: 50px;
 }
+.panel-title{
+    font-family: 'Poppins', sans-serif; 
+}
+.panel1{
+    background-color: white;
+}
