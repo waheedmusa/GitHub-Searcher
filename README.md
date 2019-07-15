@@ -17,10 +17,9 @@ GitSearch is an application that allows a user to search for any GitHub profile 
 Users visiting this website should expect:
 * A landing page that has the title of the application and a search bar that allows the the user to search for a profile on GitHub
 * Once the users name is entered and the user clicks the enter key, the GitHub profile of the user is displayed
-* The profile picture of the user is displayed on the right
-* the number of followers and repositories are displayed on the right
-* A button that when clicked will take the user to the GitHub profile of the person shown
-* Below the button is a list of all the ripositories created by the user and a button on the right side that takes the user to the repository on GitHub
+* The profile picture of the user is displayed
+* When the profile picture is clicked it will take the user to the GitHub profile of the person shown
+* Below the profile image is a list of all the ripositories created by the user and a button on the right side that takes the user to the repository on GitHub
 
 ## Known Bugs
 There were no bugs found during the building of this website.
