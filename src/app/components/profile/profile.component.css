@@ -8,8 +8,8 @@
     font-family: 'Poppins', sans-serif; 
 }
 .page{
-    background-color: #A9C2D0;
     padding: 5%;
+    border-radius: 5px;
 }
 .para1{
     font-weight: bold;
