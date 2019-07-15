@@ -19,11 +19,11 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <img src="{{profile.avatar_url}}" alt="Profile Image">
                     <a class="btn btn-default btn-block" target="_blank" href="{{profile.html_url}}">View Profile</a>
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8">
                         <div class="stats">
                                 <span class="label label-default">{{profile.public_repos}} Public Repos</span>
                                 <span class="label label-primary">{{profile.public_gists}} Public Gists</span>
@@ -50,11 +50,15 @@
                         <div *ngFor="let repo of repos">
                               <div class="row">
                                 <div class="col-md-9">
-                                <p class="clearfix">
-                                    {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-success pull">View this project on GitHub</a>
-                                </p>
+                                <p class="para1">  {{repo.name}}  </p>
+                                <br>
                                 <p>{{repo.description}}</p>
+                                <hr>
                             </div>
+                                <div class="col-md-3">
+                                        <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-success pull">View this project on GitHub</a>
+                                </div>
+                            
                         </div>
                     </div>
                 </div>
